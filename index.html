@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday</title>
+<style>
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #187fc4; 
+  margin: 0;
+}
+
+.birthdayCard {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: perspective(2500px);
+  transition: 1s;
+}
+
+.birthdayCard:hover {
+  transform: perspective(2500px) rotate(5deg);
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
+    0 10px 100px rgba(0, 0, 0, 0.5);
+}
+
+.birthdayCard:hover .cardFront {
+  transform: rotateY(-160deg);
+}
+
+.birthdayCard:hover .happy {
+  visibility: hidden;
+}
+
+.cardFront {
+  position: relative;
+  background-color: #0d7171;
+  width: 250px;
+  height: 350px;
+  overflow: hidden;
+  transform-origin: left;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
+    30px 0 50px rgba(0, 0, 0, 0.4);
+  transition: 0.6s;
+}
+
+.happy {
+  font-family: Tahoma, sans-serif;
+  text-align: center;
+  margin: 30px;
+  background-image: linear-gradient(120deg, #ffd856 0%, #f98c6e 100%);
+  transition: 0.1s;
+}
+
+.balloons {
+  position: absolute;
+}
+
+.balloonOne,
+.balloonTwo,
+.balloonThree,
+.balloonFour {
+  position: absolute;
+  width: 85px;
+  height: 95px;
+  border-radius: 50%;
+}
+
+.balloonOne {
+  background-color: rgba(255, 40, 90, 0.7);
+  left: -10px;
+  top: 50px;
+}
+
+.balloonTwo {
+  background-color: rgba(9, 215, 160, 0.7);
+  left: 50px;
+  top: 20px;
+}
+
+.balloonThree {
+  background-color: rgba(255, 186, 26, 0.7);
+  left: 110px;
+  top: 50px;
+}
+
+.balloonFour {
+  background-color: rgba(12, 122, 159, 0.7);
+  left: 170px;
+  top: 20px;
+}
+
+.balloonOne:before,
+.balloonTwo:before,
+.balloonThree:before,
+.balloonFour:before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 155px;
+  background-color: #ffc848;
+  top: 95px;
+  left: 43px;
+}
+
+.balloonOne:after,
+.balloonTwo:after,
+.balloonThree:after,
+.balloonFour:after {
+  content: "";
+  position: absolute;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  top: 94px;
+  left: 37px;
+}
+
+.balloonOne:after {
+  border-bottom: 10px solid #ff3e6b;
+}
+
+.balloonTwo:after {
+  border-bottom: 10px solid #04b183;
+}
+
+.balloonThree:after {
+  border-bottom: 10px solid #ffc94c;
+}
+
+.balloonFour:after {
+  border-bottom: 10px solid #13a9db;
+}
+
+.cardInside {
+  position: absolute;
+  background-color: #d81362;
+  width: 250px;
+  height: 350px;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+  padding: 20px; /* Add some padding */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+p {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif,cursive;
+  margin: 10px 0; /* Reduced margin to lessen distance */
+  color: #06f3d7;
+  overflow: hidden;
+}
+
+.name {
+  position: absolute;
+  left: 150px;
+  top: 200px;
+  color: #333;
+}
+
+.back {
+  font-family: Tahoma, sans-serif;
+  color: #a7a2a2;
+  text-align: center;
+  margin: 30px 0; /* Adjust margin */
+}
+
+.footer {
+  position: absolute;
+  bottom: 10px; /* Position from the bottom */
+  right: 10px; /* Position from the right */
+  font-family: Tahoma, sans-serif;
+  color: #fff;
+  font-size: 12px; /* Adjust font size */
+}
+</style>
+</head>
+<body>
+<div class="birthdayCard">
+  <div class="cardFront">
+    <h3 class="happy">HAPPY BIRTHDAY!</h3>
+    <h3 class="happy">HAPPY BIRTHDAY</h3>
+    <div class="balloons">
+      <div class="balloonOne"></div>
+      <div class="balloonTwo"></div>
+      <div class="balloonThree"></div>
+      <div class="balloonFour"></div>
+    </div>
+  </div>
+  <div class="cardInside">
+    <h3 class="back"></h3>
+    <h3 class="back">HAPPY BIRTHDAY [NAME]"></h3>
+    <p>Dear Friend,</p>
+    <p>
+      Stay happy, keep smiling!<br>
+      Wish you all the good things and a great year ahead!<br>
+      Keep smiling and keep enjoying!
+    </p>
+    <footer class="footer">by [YOUR NAME</footer>
+  </div>
+</div>
+</body>
+</html>
